@@ -6,7 +6,7 @@ use std::time::Duration;
 use rand::Rng;
 use rdev::{Event, EventType, listen};
 use rdev::Key::{KeyZ};
-use crate::clicker_class::Clicker;
+use clicker_class::Clicker;
 
 mod clicker_class;
 
@@ -47,9 +47,6 @@ fn main() {
             clicker.click(d1);
             thread::sleep(Duration::from_millis(d2));
         }
+        thread::sleep(Duration::from_millis(1)); // Loop will take +20% CPU if this is not here.
     }
 }
-
-
-
-
